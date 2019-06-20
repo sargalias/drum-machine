@@ -24,6 +24,7 @@ module.exports = env => {
       alias: {
         testUtils: path.resolve(__dirname, 'testUtils/'), // because ESLint reads from webpack alias
         components: path.resolve(__dirname, 'src/components/'),
+        base: path.resolve(__dirname, 'src/base/'),
       },
     },
     module: {
