@@ -5,6 +5,7 @@ module.exports = {
     '\\.(css|less|scss)$': 'identity-obj-proxy',
 
     '^testUtils$': '<rootDir>/testUtils',
+    '^components(.*)$': '<rootDir>/src/components$1',
   },
   coverageThreshold: {
     global: {
@@ -13,6 +14,7 @@ module.exports = {
       lines: 90,
     },
   },
+  moduleFileExtensions: ['js', 'jsx', 'json'],
   setupFilesAfterEnv: ['jest-extended'],
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(test).[jt]s?(x)'],
 };
