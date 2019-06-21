@@ -1,0 +1,22 @@
+.DrumPad {
+  padding: $drumpad-pd;
+  border: none;
+  border: 1px solid $color-dark;
+  margin: $drumpad-mg;
+  background-image: linear-gradient(to bottom right, $color-dark, $color-light);
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  font-size: $drumpad-fs;
+  font-weight: 700;
+
+  &:focus {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4), 0 0 8px rgba(0, 0, 0, 1);
+    outline: none;
+  }
+
+  &:active {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: none;
+    transform: translate(2px, 2px);
+  }
+}
