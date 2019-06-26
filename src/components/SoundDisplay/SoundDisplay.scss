@@ -1,0 +1,19 @@
+.SoundDisplay {
+  text-align: center;
+
+  &_label {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: $soundDisplay-font-size;
+    font-weight: 700;
+  }
+
+  &_output {
+    display: block;
+    width: 15rem;
+    padding: $soundDisplay-spacing-unit;
+    border: 1px solid #000000;
+    margin: $soundDisplay-spacing-unit auto;
+    background-color: $color-display;
+  }
+}
