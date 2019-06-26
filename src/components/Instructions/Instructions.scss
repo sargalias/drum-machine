@@ -1,0 +1,11 @@
+.Instructions {
+  &_instructionList {
+    max-width: 70ch;
+    margin: 0 auto;
+    font-size: var(--font-size-p);
+  }
+
+  &_instruction {
+    margin-bottom: 1rem;
+  }
+}
