@@ -2,8 +2,109 @@
 
 exports[`snapshot 1`] = `
 <div>
-  <h1>
-    Drum machine
-  </h1>
+  <div>
+    <h1>
+      Drum machine
+    </h1>
+    <div>
+      <div
+        class="DrumPadCollection"
+      >
+        <button
+          class="DrumPad"
+          type="button"
+        >
+          W
+        </button>
+        <button
+          class="DrumPad"
+          type="button"
+        >
+          W
+        </button>
+        <button
+          class="DrumPad"
+          type="button"
+        >
+          W
+        </button>
+        <button
+          class="DrumPad"
+          type="button"
+        >
+          W
+        </button>
+        <button
+          class="DrumPad"
+          type="button"
+        >
+          W
+        </button>
+        <button
+          class="DrumPad"
+          type="button"
+        >
+          W
+        </button>
+        <button
+          class="DrumPad"
+          type="button"
+        >
+          W
+        </button>
+        <button
+          class="DrumPad"
+          type="button"
+        >
+          W
+        </button>
+      </div>
+      <div
+        class="SoundDisplay"
+      >
+        <label
+          class="SoundDisplay_label"
+          for="soundName"
+          id="soundNameLabel"
+        >
+          Sound name
+          <output
+            class="SoundDisplay_output"
+            id="soundName"
+          >
+            --------
+          </output>
+        </label>
+      </div>
+    </div>
+    <section
+      class="Instructions"
+    >
+      <h2>
+        Instructions
+      </h2>
+      <div>
+        <ul
+          class="Instructions_instructionList"
+        >
+          <li
+            class="Instructions_instruction"
+          >
+            Click on a drum pad to play a sound.
+          </li>
+          <li
+            class="Instructions_instruction"
+          >
+            The sound name will be displayed in the sound display area.
+          </li>
+          <li
+            class="Instructions_instruction"
+          >
+            Press the corresponding key on your keyboard to play the drumpad with that key.
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
 </div>
 `;
