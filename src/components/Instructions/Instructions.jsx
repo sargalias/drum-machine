@@ -16,12 +16,6 @@ const Instructions = () => (
           Press the corresponding key on your keyboard to play the drumpad with
           that key.
         </li>
-        <li className={styles.Instructions_instruction}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
-          culpa natus tenetur? Assumenda, qui voluptates iste ut libero quam,
-          ratione doloribus animi fuga saepe, placeat velit. Deleniti
-          reprehenderit veritatis est. that key.
-        </li>
       </ul>
     </div>
   </section>
