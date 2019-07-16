@@ -13,51 +13,35 @@ exports[`snapshot 1`] = `
         <button
           class="DrumPad"
           type="button"
-        >
-          W
-        </button>
+        />
         <button
           class="DrumPad"
           type="button"
-        >
-          W
-        </button>
+        />
         <button
           class="DrumPad"
           type="button"
-        >
-          W
-        </button>
+        />
         <button
           class="DrumPad"
           type="button"
-        >
-          W
-        </button>
+        />
         <button
           class="DrumPad"
           type="button"
-        >
-          W
-        </button>
+        />
         <button
           class="DrumPad"
           type="button"
-        >
-          W
-        </button>
+        />
         <button
           class="DrumPad"
           type="button"
-        >
-          W
-        </button>
+        />
         <button
           class="DrumPad"
           type="button"
-        >
-          W
-        </button>
+        />
       </div>
       <div
         class="SoundDisplay"

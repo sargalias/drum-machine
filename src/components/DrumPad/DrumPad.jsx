@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './DrumPad.scss';
 
-const DrumPad = () => (
+const DrumPad = ({ letter }) => (
   <button className={styles.DrumPad} type="button">
-    W
+    {letter}
   </button>
 );
 
