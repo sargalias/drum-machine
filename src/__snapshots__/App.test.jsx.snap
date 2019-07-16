@@ -14,64 +14,80 @@ exports[`snapshot 1`] = `
           class="DrumPad"
           type="button"
         >
+          W
           <audio
-            data-testid="drumPad_audio_undefined"
+            data-testid="drumPad_audio_W"
+            src="test-file-stub"
           />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
+          W
           <audio
-            data-testid="drumPad_audio_undefined"
+            data-testid="drumPad_audio_W"
+            src="test-file-stub"
           />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
+          W
           <audio
-            data-testid="drumPad_audio_undefined"
+            data-testid="drumPad_audio_W"
+            src="test-file-stub"
           />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
+          W
           <audio
-            data-testid="drumPad_audio_undefined"
+            data-testid="drumPad_audio_W"
+            src="test-file-stub"
           />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
+          W
           <audio
-            data-testid="drumPad_audio_undefined"
+            data-testid="drumPad_audio_W"
+            src="test-file-stub"
           />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
+          W
           <audio
-            data-testid="drumPad_audio_undefined"
+            data-testid="drumPad_audio_W"
+            src="test-file-stub"
           />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
+          W
           <audio
-            data-testid="drumPad_audio_undefined"
+            data-testid="drumPad_audio_W"
+            src="test-file-stub"
           />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
+          W
           <audio
-            data-testid="drumPad_audio_undefined"
+            data-testid="drumPad_audio_W"
+            src="test-file-stub"
           />
         </button>
       </div>
