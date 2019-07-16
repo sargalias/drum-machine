@@ -14,49 +14,65 @@ exports[`snapshot 1`] = `
           class="DrumPad"
           type="button"
         >
-          W
+          <audio
+            data-testid="drumPad_audio_undefined"
+          />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
-          W
+          <audio
+            data-testid="drumPad_audio_undefined"
+          />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
-          W
+          <audio
+            data-testid="drumPad_audio_undefined"
+          />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
-          W
+          <audio
+            data-testid="drumPad_audio_undefined"
+          />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
-          W
+          <audio
+            data-testid="drumPad_audio_undefined"
+          />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
-          W
+          <audio
+            data-testid="drumPad_audio_undefined"
+          />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
-          W
+          <audio
+            data-testid="drumPad_audio_undefined"
+          />
         </button>
         <button
           class="DrumPad"
           type="button"
         >
-          W
+          <audio
+            data-testid="drumPad_audio_undefined"
+          />
         </button>
       </div>
       <div

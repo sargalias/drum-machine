@@ -31,6 +31,15 @@ module.exports = env => {
     module: {
       rules: [
         {
+          test: /\.(wav)$/,
+          use: [
+            {
+              loader: 'file-loader',
+            },
+          ],
+        },
+
+        {
           test: /\.jsx$/,
           exclude: /node_modules/,
           use: [
