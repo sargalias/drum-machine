@@ -2,8 +2,12 @@
 import React from 'react';
 import styles from './DrumPad.scss';
 
-const DrumPad = ({ letter, audioSrc }) => (
-  <button className={styles.DrumPad} type="button">
+const DrumPad = ({ letter, audioSrc, onInteraction }) => (
+  <button
+    className={styles.DrumPad}
+    type="button"
+    onClick={() => onInteraction(letter)}
+  >
     {letter}
     <audio src={audioSrc} data-testid={`drumPad_audio_${letter}`} />
   </button>
