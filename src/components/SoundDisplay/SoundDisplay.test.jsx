@@ -11,4 +11,11 @@ describe('SoundDisplay', () => {
 
     expect(() => getByText(defaultSoundname)).not.toThrow();
   });
+
+  test('should display value of soundName prop', () => {
+    const soundName = 'foo';
+    const { getByText } = render(<SoundDisplay soundName={soundName} />);
+
+    expect(() => getByText(soundName)).not.toThrow();
+  });
 });
