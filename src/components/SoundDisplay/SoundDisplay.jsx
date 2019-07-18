@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SoundDisplay.scss';
 
 /* eslint-disable jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control */
-const SoundDisplay = () => (
+const SoundDisplay = ({ soundName = '-----------' }) => (
   <div className={styles.SoundDisplay}>
     <label
       htmlFor="soundName"
@@ -11,7 +11,7 @@ const SoundDisplay = () => (
     >
       Sound name
       <output id="soundName" className={styles.SoundDisplay_output}>
-        --------
+        {soundName}
       </output>
     </label>
   </div>
