@@ -3,7 +3,7 @@ import styles from './SoundDisplay.scss';
 
 /* eslint-disable jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control */
 const SoundDisplay = ({ soundName = '-----------' }) => (
-  <div className={styles.SoundDisplay}>
+  <div className={styles.SoundDisplay} data-testid="soundDisplay">
     <label
       htmlFor="soundName"
       className={styles.SoundDisplay_label}

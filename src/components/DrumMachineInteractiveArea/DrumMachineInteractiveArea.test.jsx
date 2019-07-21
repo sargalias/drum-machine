@@ -58,4 +58,48 @@ describe('DrumMachineInteractiveArea', () => {
       expect(audio.getAttribute('src')).toBe(audioSrc);
     });
   });
+
+  test('renders soundDisplay component', () => {
+    const drumPads = [
+      {
+        letter: 'W',
+        audioSrc: 'testW',
+      },
+      {
+        letter: 'E',
+        audioSrc: 'testE',
+      },
+      {
+        letter: 'R',
+        audioSrc: 'testR',
+      },
+      {
+        letter: 'T',
+        audioSrc: 'testT',
+      },
+      {
+        letter: 'Y',
+        audioSrc: 'testY',
+      },
+      {
+        letter: 'U',
+        audioSrc: 'testU',
+      },
+      {
+        letter: 'I',
+        audioSrc: 'testI',
+      },
+    ];
+
+    const { getByTestId: getByTestId1 } = render(
+      <DrumMachineInteractiveArea drumPads={[]} />,
+    );
+    expect(() => getByTestId1('soundDisplay')).not.toThrow();
+    cleanup();
+
+    const { getByTestId: getAllByTestId2 } = render(
+      <DrumMachineInteractiveArea drumPads={drumPads} />,
+    );
+    expect(() => getAllByTestId2('soundDisplay')).not.toThrow();
+  });
 });

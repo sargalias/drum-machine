@@ -12,6 +12,7 @@ exports[`snapshot 1`] = `
       />
       <div
         class="SoundDisplay"
+        data-testid="soundDisplay"
       >
         <label
           class="SoundDisplay_label"
