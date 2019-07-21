@@ -26,6 +26,7 @@ module.exports = env => {
         components: path.resolve(__dirname, 'src/components/'),
         base: path.resolve(__dirname, 'src/base/'),
         abstracts: path.resolve(__dirname, 'src/abstracts/'),
+        audio: path.resolve(__dirname, 'src/audio/'),
       },
     },
     module: {

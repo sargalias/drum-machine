@@ -8,7 +8,7 @@ import Instructions from 'components/Instructions';
 const App = () => (
   <div>
     <h1>Drum machine</h1>
-    <DrumMachineInteractiveArea />
+    <DrumMachineInteractiveArea drumPads={[]} />
     <Instructions />
   </div>
 );

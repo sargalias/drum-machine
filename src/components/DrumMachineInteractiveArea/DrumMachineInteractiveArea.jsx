@@ -2,9 +2,9 @@ import React from 'react';
 import DrumPadCollection from 'components/DrumPadCollection';
 import SoundDisplay from 'components/SoundDisplay';
 
-const DrumMachineInteractiveArea = () => (
+const DrumMachineInteractiveArea = ({ drumPads }) => (
   <div>
-    <DrumPadCollection />
+    <DrumPadCollection drumPads={drumPads} />
     <SoundDisplay />
   </div>
 );
