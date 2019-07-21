@@ -14,4 +14,48 @@ describe('DrumMachineInteractiveArea', () => {
 
     expect(() => getAllByTestId(/drumPad_button_*/)).toThrow();
   });
+
+  test('renders correct drumPads with normal drumPads prop', () => {
+    const drumPads = [
+      {
+        letter: 'W',
+        audioSrc: 'testW',
+      },
+      {
+        letter: 'E',
+        audioSrc: 'testE',
+      },
+      {
+        letter: 'R',
+        audioSrc: 'testR',
+      },
+      {
+        letter: 'T',
+        audioSrc: 'testT',
+      },
+      {
+        letter: 'Y',
+        audioSrc: 'testY',
+      },
+      {
+        letter: 'U',
+        audioSrc: 'testU',
+      },
+      {
+        letter: 'I',
+        audioSrc: 'testI',
+      },
+    ];
+
+    const { getByTestId } = render(
+      <DrumMachineInteractiveArea drumPads={drumPads} />,
+    );
+
+    drumPads.forEach(({ letter, audioSrc }) => {
+      const button = getByTestId(`drumPad_button_${letter}`);
+      const audio = getByTestId(`drumPad_audio_${letter}`);
+      expect(button.textContent).toBe(letter);
+      expect(audio.getAttribute('src')).toBe(audioSrc);
+    });
+  });
 });
