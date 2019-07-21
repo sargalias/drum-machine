@@ -1,37 +1,7 @@
 import React from 'react';
 import { render, cleanup } from 'testUtils';
 import DrumMachineInteractiveArea from './DrumMachineInteractiveArea';
-
-const drumPads = [
-  {
-    letter: 'W',
-    audioSrc: 'testW',
-  },
-  {
-    letter: 'E',
-    audioSrc: 'testE',
-  },
-  {
-    letter: 'R',
-    audioSrc: 'testR',
-  },
-  {
-    letter: 'T',
-    audioSrc: 'testT',
-  },
-  {
-    letter: 'Y',
-    audioSrc: 'testY',
-  },
-  {
-    letter: 'U',
-    audioSrc: 'testU',
-  },
-  {
-    letter: 'I',
-    audioSrc: 'testI',
-  },
-];
+import drumPads from './drumPadsHelper';
 
 describe('DrumMachineInteractiveArea', () => {
   beforeEach(cleanup);
