@@ -2,51 +2,51 @@ import React from 'react';
 import { render, cleanup } from 'testUtils';
 import DrumMachineInteractiveArea from './DrumMachineInteractiveArea';
 
+const drumPads = [
+  {
+    letter: 'W',
+    audioSrc: 'testW',
+  },
+  {
+    letter: 'E',
+    audioSrc: 'testE',
+  },
+  {
+    letter: 'R',
+    audioSrc: 'testR',
+  },
+  {
+    letter: 'T',
+    audioSrc: 'testT',
+  },
+  {
+    letter: 'Y',
+    audioSrc: 'testY',
+  },
+  {
+    letter: 'U',
+    audioSrc: 'testU',
+  },
+  {
+    letter: 'I',
+    audioSrc: 'testI',
+  },
+];
+
 describe('DrumMachineInteractiveArea', () => {
   beforeEach(cleanup);
 
   test('renders correct drumPads with empty drumPads prop', () => {
-    const drumPads = [];
+    const drumPadsProp = [];
 
     const { getAllByTestId } = render(
-      <DrumMachineInteractiveArea drumPads={drumPads} />,
+      <DrumMachineInteractiveArea drumPads={drumPadsProp} />,
     );
 
     expect(() => getAllByTestId(/drumPad_button_*/)).toThrow();
   });
 
   test('renders correct drumPads with normal drumPads prop', () => {
-    const drumPads = [
-      {
-        letter: 'W',
-        audioSrc: 'testW',
-      },
-      {
-        letter: 'E',
-        audioSrc: 'testE',
-      },
-      {
-        letter: 'R',
-        audioSrc: 'testR',
-      },
-      {
-        letter: 'T',
-        audioSrc: 'testT',
-      },
-      {
-        letter: 'Y',
-        audioSrc: 'testY',
-      },
-      {
-        letter: 'U',
-        audioSrc: 'testU',
-      },
-      {
-        letter: 'I',
-        audioSrc: 'testI',
-      },
-    ];
-
     const { getByTestId } = render(
       <DrumMachineInteractiveArea drumPads={drumPads} />,
     );
@@ -60,37 +60,6 @@ describe('DrumMachineInteractiveArea', () => {
   });
 
   test('renders soundDisplay component', () => {
-    const drumPads = [
-      {
-        letter: 'W',
-        audioSrc: 'testW',
-      },
-      {
-        letter: 'E',
-        audioSrc: 'testE',
-      },
-      {
-        letter: 'R',
-        audioSrc: 'testR',
-      },
-      {
-        letter: 'T',
-        audioSrc: 'testT',
-      },
-      {
-        letter: 'Y',
-        audioSrc: 'testY',
-      },
-      {
-        letter: 'U',
-        audioSrc: 'testU',
-      },
-      {
-        letter: 'I',
-        audioSrc: 'testI',
-      },
-    ];
-
     const { getByTestId: getByTestId1 } = render(
       <DrumMachineInteractiveArea drumPads={[]} />,
     );
