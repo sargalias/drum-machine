@@ -7,6 +7,7 @@ const DrumPad = ({ letter, audioSrc, onInteraction }) => (
     className={styles.DrumPad}
     type="button"
     onClick={() => onInteraction(letter)}
+    data-testid={`drumPad_button_${letter}`}
   >
     {letter}
     <audio src={audioSrc} data-testid={`drumPad_audio_${letter}`} />
