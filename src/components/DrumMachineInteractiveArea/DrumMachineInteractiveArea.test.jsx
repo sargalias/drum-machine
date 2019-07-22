@@ -43,23 +43,19 @@ describe('DrumMachineInteractiveArea', () => {
   });
 
   describe('audio', () => {
-    let originalAudio;
     let AudioMock;
-    let playMock;
-    let pauseMock;
 
     beforeEach(() => {
-      originalAudio = window.Audio;
-      AudioMock = jest.fn();
-      playMock = jest.fn();
-      pauseMock = jest.fn();
-      AudioMock.prototype.play = playMock;
-      AudioMock.prototype.pause = pauseMock;
-      window.Audio = AudioMock;
+      // eslint-disable-next-line
+      AudioMock = jest.fn(function() {
+        this.play = jest.fn();
+        this.pause = jest.fn();
+      });
+      jest.spyOn(window, 'Audio').mockImplementation(AudioMock);
     });
 
     afterEach(() => {
-      window.Audio = originalAudio;
+      jest.resetAllMocks();
     });
 
     test('should play audio on drumPad click', () => {
@@ -70,7 +66,25 @@ describe('DrumMachineInteractiveArea', () => {
 
       fireEvent.click(button);
 
-      expect(playMock).toHaveBeenCalledTimes(1);
+      expect(AudioMock.mock.instances[0].play).toHaveBeenCalledTimes(1);
+    });
+
+    test('should play correct audio with different drumPad clicks', () => {
+      const { getByTestId } = render(
+        <DrumMachineInteractiveArea drumPads={drumPadsNormal} />,
+      );
+      const buttonW = getByTestId('drumPad_button_W');
+      const buttonE = getByTestId('drumPad_button_E');
+      const playMockW = AudioMock.mock.instances[0].play;
+      const playMockE = AudioMock.mock.instances[1].play;
+
+      fireEvent.click(buttonW);
+      expect(playMockW).toHaveBeenCalledTimes(1);
+      expect(playMockE).not.toHaveBeenCalled();
+
+      fireEvent.click(buttonE);
+      expect(playMockW).toHaveBeenCalledTimes(1);
+      expect(playMockE).toHaveBeenCalledTimes(1);
     });
   });
 });
