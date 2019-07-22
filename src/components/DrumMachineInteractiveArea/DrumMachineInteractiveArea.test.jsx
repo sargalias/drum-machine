@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from 'testUtils';
 import DrumMachineInteractiveArea from './DrumMachineInteractiveArea';
-import drumPads, { drumPadsSingle } from './drumPadsHelper';
+import { drumPadsSingle, drumPadsNormal } from './drumPadsHelper';
 
 describe('DrumMachineInteractiveArea', () => {
   beforeEach(cleanup);
@@ -19,10 +19,10 @@ describe('DrumMachineInteractiveArea', () => {
 
     test('correct drumPads with normal drumPads prop', () => {
       const { getByTestId } = render(
-        <DrumMachineInteractiveArea drumPads={drumPads} />,
+        <DrumMachineInteractiveArea drumPads={drumPadsNormal} />,
       );
 
-      drumPads.forEach(({ letter }) => {
+      drumPadsNormal.forEach(({ letter }) => {
         const button = getByTestId(`drumPad_button_${letter}`);
         expect(button.textContent).toBe(letter);
       });
@@ -36,7 +36,7 @@ describe('DrumMachineInteractiveArea', () => {
       cleanup();
 
       const { getByTestId: getAllByTestId2 } = render(
-        <DrumMachineInteractiveArea drumPads={drumPads} />,
+        <DrumMachineInteractiveArea drumPads={drumPadsNormal} />,
       );
       expect(() => getAllByTestId2('soundDisplay')).not.toThrow();
     });
