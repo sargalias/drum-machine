@@ -1,3 +1,10 @@
+const drumPadsSingle = [
+  {
+    letter: 'W',
+    audioSrc: 'testW',
+  },
+];
+
 const drumPads = [
   {
     letter: 'W',
@@ -29,4 +36,4 @@ const drumPads = [
   },
 ];
 
-export default drumPads;
+export { drumPads as default, drumPadsSingle };
