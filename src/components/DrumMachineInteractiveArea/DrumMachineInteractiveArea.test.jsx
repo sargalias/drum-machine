@@ -22,11 +22,9 @@ describe('DrumMachineInteractiveArea', () => {
         <DrumMachineInteractiveArea drumPads={drumPads} />,
       );
 
-      drumPads.forEach(({ letter, audioSrc }) => {
+      drumPads.forEach(({ letter }) => {
         const button = getByTestId(`drumPad_button_${letter}`);
-        const audio = getByTestId(`drumPad_audio_${letter}`);
         expect(button.textContent).toBe(letter);
-        expect(audio.getAttribute('src')).toBe(audioSrc);
       });
     });
 

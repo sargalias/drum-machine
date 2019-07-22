@@ -2,18 +2,12 @@
 
 // WIP
 it.skip('drumPad should play audio file', () => {
-  let audioElement;
-
   cy.visit('/');
-
-  cy.getByTestId('drumPad_audio_Q').then($el => {
-    audioElement = $el[0];
-    cy.spy(audioElement, 'play');
-  });
+  cy.spy(window.Audio.prototype, 'play');
 
   cy.getByTestId('drumPad_button_Q')
     .click()
     .then(() => {
-      expect(audioElement.play).called;
+      expect(window.Audio.prototype.play).called;
     });
 });

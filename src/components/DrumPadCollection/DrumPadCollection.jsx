@@ -4,8 +4,8 @@ import styles from './DrumPadCollection.scss';
 
 const DrumPadCollection = ({ drumPads }) => (
   <div className={styles.DrumPadCollection}>
-    {drumPads.map(({ letter, audioSrc }) => (
-      <DrumPad letter={letter} audioSrc={audioSrc} key={letter} />
+    {drumPads.map(({ letter }) => (
+      <DrumPad letter={letter} key={letter} />
     ))}
   </div>
 );

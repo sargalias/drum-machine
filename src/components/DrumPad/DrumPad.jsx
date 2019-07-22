@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './DrumPad.scss';
 
-const DrumPad = ({ letter, audioSrc, onInteraction }) => (
+const DrumPad = ({ letter, onInteraction }) => (
   <button
     className={styles.DrumPad}
     type="button"
@@ -10,7 +10,6 @@ const DrumPad = ({ letter, audioSrc, onInteraction }) => (
     data-testid={`drumPad_button_${letter}`}
   >
     {letter}
-    <audio src={audioSrc} data-testid={`drumPad_audio_${letter}`} />
   </button>
 );
 
