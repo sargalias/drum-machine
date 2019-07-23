@@ -124,5 +124,41 @@ describe('DrumMachineInteractiveArea', () => {
       expect(audioInstanceW.pause).toHaveBeenCalledTimes(1);
       expect(audioInstanceE.pause).toHaveBeenCalledTimes(1);
     });
+
+    test('on multiple clicks close together, should restart audio properly and should finish playing 1s after final click', () => {
+      jest.useFakeTimers();
+      const { getByTestId } = render(
+        <DrumMachineInteractiveArea drumPads={drumPadsNormal} />,
+      );
+      const buttonW = getByTestId('drumPad_button_W');
+      const audioInstance = AudioMock.mock.instances[0];
+      expect(audioInstance.play).not.toHaveBeenCalled();
+      expect(audioInstance.pause).not.toHaveBeenCalled();
+
+      // First click
+      fireEvent.click(buttonW);
+      expect(audioInstance.currentTime).toBe(0);
+      expect(audioInstance.play).toHaveBeenCalledTimes(1);
+      expect(audioInstance.pause).not.toHaveBeenCalled();
+
+      // Second click
+      fireEvent.click(buttonW);
+      expect(audioInstance.currentTime).toBe(0);
+      expect(audioInstance.play).toHaveBeenCalledTimes(2);
+      expect(audioInstance.pause).not.toHaveBeenCalled();
+
+      // Third click after 800ms
+      audioInstance.currentTime = 500;
+      fireEvent.click(buttonW);
+      expect(audioInstance.currentTime).toBe(0);
+      expect(audioInstance.play).toHaveBeenCalledTimes(3);
+      expect(audioInstance.pause).not.toHaveBeenCalled();
+
+      jest.advanceTimersByTime(950); // total 950ms
+      expect(audioInstance.pause).not.toHaveBeenCalled();
+
+      jest.advanceTimersByTime(100); // total 950ms
+      expect(audioInstance.pause).toHaveBeenCalledTimes(1);
+    });
   });
 });
