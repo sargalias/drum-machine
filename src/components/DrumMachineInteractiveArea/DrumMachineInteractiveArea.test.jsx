@@ -86,5 +86,43 @@ describe('DrumMachineInteractiveArea', () => {
       expect(playMockW).toHaveBeenCalledTimes(1);
       expect(playMockE).toHaveBeenCalledTimes(1);
     });
+
+    test('should stop audio playing after 1 second with multiple drumpads', () => {
+      jest.useFakeTimers();
+      const { getByTestId } = render(
+        <DrumMachineInteractiveArea drumPads={drumPadsNormal} />,
+      );
+      const buttonW = getByTestId('drumPad_button_W');
+      const buttonE = getByTestId('drumPad_button_E');
+      const audioInstanceW = AudioMock.mock.instances[0];
+      const audioInstanceE = AudioMock.mock.instances[1];
+
+      // Click on W
+      fireEvent.click(buttonW);
+      jest.advanceTimersByTime(100); // total 100ms
+
+      // Click on E
+      fireEvent.click(buttonE);
+
+      // Play should have been called for both, pause should not have been called
+      expect(audioInstanceW.play).toHaveBeenCalledTimes(1);
+      expect(audioInstanceE.play).toHaveBeenCalledTimes(1);
+      expect(audioInstanceW.pause).not.toHaveBeenCalled();
+      expect(audioInstanceE.pause).not.toHaveBeenCalled();
+
+      jest.advanceTimersByTime(850); // total 950ms
+      expect(audioInstanceW.play).toHaveBeenCalledTimes(1);
+      expect(audioInstanceE.play).toHaveBeenCalledTimes(1);
+      expect(audioInstanceW.pause).not.toHaveBeenCalled();
+      expect(audioInstanceE.pause).not.toHaveBeenCalled();
+
+      jest.advanceTimersByTime(100); // 1050ms total
+      expect(audioInstanceW.pause).toHaveBeenCalledTimes(1);
+      expect(audioInstanceE.pause).not.toHaveBeenCalled();
+
+      jest.advanceTimersByTime(100); // 1150ms total
+      expect(audioInstanceW.pause).toHaveBeenCalledTimes(1);
+      expect(audioInstanceE.pause).toHaveBeenCalledTimes(1);
+    });
   });
 });

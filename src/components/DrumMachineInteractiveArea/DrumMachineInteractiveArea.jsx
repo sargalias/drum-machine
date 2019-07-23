@@ -17,6 +17,13 @@ const DrumMachineInteractiveArea = ({ drumPads }) => {
 
   const handleDrumPadInteraction = letter => {
     drumPadsState[letter].audio.play();
+    setTimeoutStopAudioPlaying(letter);
+  };
+
+  const setTimeoutStopAudioPlaying = letter => {
+    setTimeout(() => {
+      drumPadsState[letter].audio.pause();
+    }, 1000);
   };
 
   return (
