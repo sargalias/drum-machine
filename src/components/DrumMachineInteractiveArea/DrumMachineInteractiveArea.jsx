@@ -1,12 +1,13 @@
-import React, { useReducer } from 'react';
+import React, { useState, useReducer } from 'react';
 import DrumPadCollection from 'components/DrumPadCollection';
 import SoundDisplay from 'components/SoundDisplay';
 
 const init = drumPads => {
   const drumPadsState = {};
-  drumPads.forEach(({ letter, audioSrc }) => {
+  drumPads.forEach(({ letter, audioSrc, soundName }) => {
     drumPadsState[letter] = {
       audio: new Audio(audioSrc),
+      soundName,
     };
   });
   return drumPadsState;
@@ -41,11 +42,13 @@ const clone = (original, i = 0) => {
 
 const DrumMachineInteractiveArea = ({ drumPads }) => {
   const [drumPadsState, drumPadsDispatch] = useReducer(reducer, drumPads, init);
+  const [lastSoundName, setLastSoundName] = useState();
 
   const handleDrumPadInteraction = letter => {
     const { audio, timeoutId: currentTimeoutId } = drumPadsState[letter];
     restartAudio(audio, currentTimeoutId);
     const timeoutId = setTimeoutStopAudioPlaying(letter);
+    setLastSoundName(drumPadsState[letter].soundName);
     updateTimeoutId(letter, timeoutId);
   };
 
@@ -77,7 +80,7 @@ const DrumMachineInteractiveArea = ({ drumPads }) => {
         drumPads={drumPads}
         handleDrumPadInteraction={handleDrumPadInteraction}
       />
-      <SoundDisplay />
+      <SoundDisplay soundName={lastSoundName} />
     </div>
   );
 };

@@ -4,7 +4,21 @@ import DrumMachineInteractiveArea from './DrumMachineInteractiveArea';
 import { drumPadsSingle, drumPadsNormal } from './drumPadsHelper';
 
 describe('DrumMachineInteractiveArea', () => {
-  beforeEach(cleanup);
+  let AudioMock;
+
+  beforeEach(() => {
+    cleanup();
+    // eslint-disable-next-line
+    AudioMock = jest.fn(function() {
+      this.play = jest.fn();
+      this.pause = jest.fn();
+    });
+    jest.spyOn(window, 'Audio').mockImplementation(AudioMock);
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
 
   describe('renders', () => {
     test('correct drumPads with empty drumPads prop', () => {
@@ -43,21 +57,6 @@ describe('DrumMachineInteractiveArea', () => {
   });
 
   describe('audio', () => {
-    let AudioMock;
-
-    beforeEach(() => {
-      // eslint-disable-next-line
-      AudioMock = jest.fn(function() {
-        this.play = jest.fn();
-        this.pause = jest.fn();
-      });
-      jest.spyOn(window, 'Audio').mockImplementation(AudioMock);
-    });
-
-    afterEach(() => {
-      jest.resetAllMocks();
-    });
-
     test('should play audio on drumPad click', () => {
       const { getByTestId } = render(
         <DrumMachineInteractiveArea drumPads={drumPadsSingle} />,
@@ -170,6 +169,25 @@ describe('DrumMachineInteractiveArea', () => {
       const soundDisplay = getByTestId('soundNameOutput');
 
       expect(soundDisplay.textContent).toBe('-----------');
+    });
+
+    test('should display correct soundName after clicking a drumPad', () => {
+      jest.useFakeTimers();
+      const { getByTestId } = render(
+        <DrumMachineInteractiveArea drumPads={drumPadsNormal} />,
+      );
+      const buttonW = getByTestId('drumPad_button_W');
+      const buttonE = getByTestId('drumPad_button_E');
+      const soundDisplay = getByTestId('soundNameOutput');
+
+      fireEvent.click(buttonW);
+      expect(soundDisplay.textContent).toBe(drumPadsNormal[0].soundName);
+
+      fireEvent.click(buttonE);
+      expect(soundDisplay.textContent).toBe(drumPadsNormal[1].soundName);
+
+      jest.advanceTimersByTime(5000);
+      expect(soundDisplay.textContent).toBe(drumPadsNormal[1].soundName);
     });
   });
 });
