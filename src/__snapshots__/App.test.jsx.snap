@@ -79,6 +79,7 @@ exports[`snapshot 1`] = `
           Sound name
           <output
             class="SoundDisplay_output"
+            data-testid="soundNameOutput"
             id="soundName"
           >
             -----------

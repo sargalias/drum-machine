@@ -10,7 +10,11 @@ const SoundDisplay = ({ soundName = '-----------' }) => (
       id="soundNameLabel"
     >
       Sound name
-      <output id="soundName" className={styles.SoundDisplay_output}>
+      <output
+        id="soundName"
+        className={styles.SoundDisplay_output}
+        data-testid="soundNameOutput"
+      >
         {soundName}
       </output>
     </label>

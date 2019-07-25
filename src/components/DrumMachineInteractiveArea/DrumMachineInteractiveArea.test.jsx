@@ -161,4 +161,15 @@ describe('DrumMachineInteractiveArea', () => {
       expect(audioInstance.pause).toHaveBeenCalledTimes(1);
     });
   });
+
+  describe('soundDisplay', () => {
+    test('should display correct default value', () => {
+      const { getByTestId } = render(
+        <DrumMachineInteractiveArea drumPads={drumPadsNormal} />,
+      );
+      const soundDisplay = getByTestId('soundNameOutput');
+
+      expect(soundDisplay.textContent).toBe('-----------');
+    });
+  });
 });
