@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import DrumPadCollection from 'components/DrumPadCollection';
 import SoundDisplay from 'components/SoundDisplay';
-import useAppLogic from '../../customHooks/useDrumMachineInteractiveLogic';
+import useAppLogic from 'customHooks/useDrumMachineInteractiveLogic';
 
 const DrumMachineInteractiveArea = ({ drumPads }) => {
   const [handleDrumPadInteraction, lastSoundName] = useAppLogic(drumPads);
