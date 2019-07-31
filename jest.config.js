@@ -9,6 +9,7 @@ module.exports = {
     '^abstracts/(.*)$': '<rootDir>/src/abstracts/$1',
     '^base/(.*)$': '<rootDir>/src/base/$1',
     '^customHooks/(.*)$': '<rootDir>/src/customHooks/$1',
+    '^reducers/(.*)$': '<rootDir>/src/reducers/$1',
   },
   coverageThreshold: {
     global: {

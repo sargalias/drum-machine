@@ -2,7 +2,7 @@ import { useState, useReducer } from 'react';
 import {
   drumMachineInteractiveLogicReducer,
   drumMachineInteractiveLogicInit,
-} from '../../reducers/drumMachineInteractiveLogicReducer';
+} from 'reducers/drumMachineInteractiveLogicReducer';
 
 const useAppLogic = drumPads => {
   const [drumPadsState, drumPadsDispatch] = useReducer(
