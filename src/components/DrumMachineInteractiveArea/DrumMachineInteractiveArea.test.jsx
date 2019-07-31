@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from 'testUtils';
+import { render, fireEvent, cleanup, act } from 'testUtils';
 import DrumMachineInteractiveArea from './DrumMachineInteractiveArea';
 import { drumPadsSingle, drumPadsNormal } from './drumPadsHelper';
 
@@ -66,6 +66,21 @@ describe('DrumMachineInteractiveArea', () => {
       fireEvent.click(button);
 
       expect(AudioMock.mock.instances[0].play).toHaveBeenCalledTimes(1);
+    });
+
+    test('should play corresponding audio on keyDown', () => {
+      render(<DrumMachineInteractiveArea drumPads={drumPadsNormal} />);
+
+      act(() => {
+        document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'W' }));
+      });
+      expect(AudioMock.mock.instances[0].play).toHaveBeenCalledTimes(1);
+
+      act(() => {
+        document.body.dispatchEvent(new KeyboardEvent('keydown', { key: 'w' }));
+      });
+      expect(AudioMock.mock.instances[0].play).toHaveBeenCalledTimes(2);
+      expect(AudioMock.mock.instances[1].play).not.toHaveBeenCalled();
     });
 
     test('should play correct audio with different drumPad clicks', () => {
