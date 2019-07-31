@@ -9,8 +9,11 @@
   }
 
   &_output {
-    display: block;
+    display: flex;
     width: 15rem;
+    min-height: 8rem;
+    align-items: center;
+    justify-content: center;
     padding: $soundDisplay-spacing-unit;
     border: 1px solid #000000;
     margin: $soundDisplay-spacing-unit auto;
