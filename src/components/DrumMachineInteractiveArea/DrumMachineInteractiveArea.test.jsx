@@ -3,6 +3,8 @@ import { render, fireEvent, cleanup, act } from 'testUtils';
 import DrumMachineInteractiveArea from './DrumMachineInteractiveArea';
 import { drumPadsSingle, drumPadsNormal } from './drumPadsHelper';
 
+const soundDuration = 1000;
+
 describe('DrumMachineInteractiveArea', () => {
   let AudioMock;
 
@@ -113,7 +115,7 @@ describe('DrumMachineInteractiveArea', () => {
 
       // Click on W
       fireEvent.click(buttonW);
-      jest.advanceTimersByTime(100); // total 100ms
+      jest.advanceTimersByTime(soundDuration * 0.1); // before pause
 
       // Click on E
       fireEvent.click(buttonE);
@@ -124,17 +126,17 @@ describe('DrumMachineInteractiveArea', () => {
       expect(audioInstanceW.pause).not.toHaveBeenCalled();
       expect(audioInstanceE.pause).not.toHaveBeenCalled();
 
-      jest.advanceTimersByTime(850); // total 950ms
+      jest.advanceTimersByTime(soundDuration * 0.85); // before pause
       expect(audioInstanceW.play).toHaveBeenCalledTimes(1);
       expect(audioInstanceE.play).toHaveBeenCalledTimes(1);
       expect(audioInstanceW.pause).not.toHaveBeenCalled();
       expect(audioInstanceE.pause).not.toHaveBeenCalled();
 
-      jest.advanceTimersByTime(100); // 1050ms total
+      jest.advanceTimersByTime(soundDuration * 0.1); // W has paused, E has not
       expect(audioInstanceW.pause).toHaveBeenCalledTimes(1);
       expect(audioInstanceE.pause).not.toHaveBeenCalled();
 
-      jest.advanceTimersByTime(100); // 1150ms total
+      jest.advanceTimersByTime(soundDuration * 0.1); // Both have paused
       expect(audioInstanceW.pause).toHaveBeenCalledTimes(1);
       expect(audioInstanceE.pause).toHaveBeenCalledTimes(1);
     });
@@ -162,16 +164,16 @@ describe('DrumMachineInteractiveArea', () => {
       expect(audioInstance.pause).not.toHaveBeenCalled();
 
       // Third click after 800ms
-      audioInstance.currentTime = 500;
+      audioInstance.currentTime = soundDuration * 0.5;
       fireEvent.click(buttonW);
       expect(audioInstance.currentTime).toBe(0);
       expect(audioInstance.play).toHaveBeenCalledTimes(3);
       expect(audioInstance.pause).not.toHaveBeenCalled();
 
-      jest.advanceTimersByTime(950); // total 950ms
+      jest.advanceTimersByTime(soundDuration * 0.95); // Before pause
       expect(audioInstance.pause).not.toHaveBeenCalled();
 
-      jest.advanceTimersByTime(100); // total 950ms
+      jest.advanceTimersByTime(soundDuration * 0.1); // After pause
       expect(audioInstance.pause).toHaveBeenCalledTimes(1);
     });
   });
