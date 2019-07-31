@@ -59,7 +59,7 @@ const useAppLogic = drumPads => {
   const setTimeoutStopAudioPlaying = letter =>
     setTimeout(() => {
       drumPadsState[letter].audio.pause();
-    }, 1000);
+    }, 500);
 
   const updateTimeoutId = (letter, timeoutId) => {
     const action = {

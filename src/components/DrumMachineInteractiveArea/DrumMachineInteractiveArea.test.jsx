@@ -3,7 +3,7 @@ import { render, fireEvent, cleanup, act } from 'testUtils';
 import DrumMachineInteractiveArea from './DrumMachineInteractiveArea';
 import { drumPadsSingle, drumPadsNormal } from './drumPadsHelper';
 
-const soundDuration = 1000;
+const soundDuration = 500;
 
 describe('DrumMachineInteractiveArea', () => {
   let AudioMock;
