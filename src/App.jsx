@@ -59,7 +59,7 @@ const drumPads = [
 
 const App = () => (
   <div>
-    <h1>Drum machine</h1>
+    <h1>Sound machine</h1>
     <DrumMachineInteractiveArea drumPads={drumPads} />
     <Instructions />
   </div>
