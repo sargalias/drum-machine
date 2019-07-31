@@ -1,50 +1,51 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import 'abstracts/variables.scss';
 import 'base/base.scss';
 import 'base/typography.scss';
 import DrumMachineInteractiveArea from 'components/DrumMachineInteractiveArea';
 import Instructions from 'components/Instructions';
-import audio1 from 'audio/AM_AmbiArpD120-02.wav';
-import audio2 from 'audio/AM_AmbiArpD120-05.wav';
-import audio3 from 'audio/AM_ConvLoop120E-01.wav';
-import audio4 from 'audio/AM_ConvLoop120F-04.wav';
-import audio5 from 'audio/AM_ConvLoop120F-05.wav';
-import audio6 from 'audio/AM_ConvLoop120G-04.wav';
-import audio7 from 'audio/AM_GuitVerber120A-01.wav';
-import audio8 from 'audio/AM_GuitVerber120A-02.wav';
+import ambiArpD120_2 from 'audio/AM_AmbiArpD120-02.wav';
+import ambiArpD120_5 from 'audio/AM_AmbiArpD120-05.wav';
+import convLoop120E_1 from 'audio/AM_ConvLoop120E-01.wav';
+import convLoop120F_4 from 'audio/AM_ConvLoop120F-04.wav';
+import convLoop120F_5 from 'audio/AM_ConvLoop120F-05.wav';
+import convLoop120G_4 from 'audio/AM_ConvLoop120G-04.wav';
+import guitVerber120A_1 from 'audio/AM_GuitVerber120A-01.wav';
+import guitVerber120A_2 from 'audio/AM_GuitVerber120A-02.wav';
 
 const drumPads = [
   {
     letter: 'Q',
-    audioSrc: audio1,
+    audioSrc: ambiArpD120_2,
   },
   {
     letter: 'W',
-    audioSrc: audio2,
+    audioSrc: ambiArpD120_5,
   },
   {
     letter: 'E',
-    audioSrc: audio3,
+    audioSrc: convLoop120E_1,
   },
   {
     letter: 'R',
-    audioSrc: audio4,
+    audioSrc: convLoop120F_4,
   },
   {
     letter: 'A',
-    audioSrc: audio5,
+    audioSrc: convLoop120F_5,
   },
   {
     letter: 'S',
-    audioSrc: audio6,
+    audioSrc: convLoop120G_4,
   },
   {
     letter: 'D',
-    audioSrc: audio7,
+    audioSrc: guitVerber120A_1,
   },
   {
     letter: 'F',
-    audioSrc: audio8,
+    audioSrc: guitVerber120A_2,
   },
 ];
 
