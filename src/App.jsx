@@ -5,14 +5,14 @@ import 'base/base.scss';
 import 'base/typography.scss';
 import DrumMachineInteractiveArea from 'components/DrumMachineInteractiveArea';
 import Instructions from 'components/Instructions';
-import ambiArpD120_2 from 'audio/AM_AmbiArpD120-02.wav';
-import ambiArpD120_5 from 'audio/AM_AmbiArpD120-05.wav';
-import convLoop120E_1 from 'audio/AM_ConvLoop120E-01.wav';
-import convLoop120F_4 from 'audio/AM_ConvLoop120F-04.wav';
-import convLoop120F_5 from 'audio/AM_ConvLoop120F-05.wav';
-import convLoop120G_4 from 'audio/AM_ConvLoop120G-04.wav';
-import guitVerber120A_1 from 'audio/AM_GuitVerber120A-01.wav';
-import guitVerber120A_2 from 'audio/AM_GuitVerber120A-02.wav';
+import ambiArpD120_2 from 'audio/AM_AmbiArpD120-02-trimmed.wav';
+import ambiArpD120_5 from 'audio/AM_AmbiArpD120-05-trimmed.wav';
+import convLoop120E_1 from 'audio/AM_ConvLoop120E-01-trimmed.wav';
+import convLoop120F_4 from 'audio/AM_ConvLoop120F-04-trimmed.wav';
+import convLoop120F_5 from 'audio/AM_ConvLoop120F-05-trimmed.wav';
+import convLoop120G_4 from 'audio/AM_ConvLoop120G-04-trimmed.wav';
+import guitVerber120A_1 from 'audio/AM_GuitVerber120A-01-trimmed.wav';
+import guitVerber120A_2 from 'audio/AM_GuitVerber120A-02-trimmed.wav';
 
 const drumPads = [
   {
