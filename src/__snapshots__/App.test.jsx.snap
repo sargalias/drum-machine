@@ -115,6 +115,38 @@ exports[`snapshot 1`] = `
         </ul>
       </div>
     </section>
+    <footer
+      class="Footer "
+    >
+      <div
+        class="Footer_content"
+      >
+        <div
+          class="attribution"
+        >
+          By
+           
+          <a
+            href="https://sargalias.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Spyros Argalias
+          </a>
+        </div>
+        <p
+          class="Footer_sourceCode"
+        >
+          <a
+            href="https://github.com/sargalias/drum-machine"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            View code on GitHub
+          </a>
+        </p>
+      </div>
+    </footer>
   </div>
 </div>
 `;

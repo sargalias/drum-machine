@@ -5,6 +5,7 @@ import 'base/base.scss';
 import 'base/typography.scss';
 import DrumMachineInteractiveArea from 'components/DrumMachineInteractiveArea';
 import Instructions from 'components/Instructions';
+import Footer from 'components/Footer';
 import ambiArpD120_2 from 'audio/AM_AmbiArpD120-02-trimmed.wav';
 import ambiArpD120_5 from 'audio/AM_AmbiArpD120-05-trimmed.wav';
 import convLoop120E_1 from 'audio/AM_ConvLoop120E-01-trimmed.wav';
@@ -62,6 +63,7 @@ const App = () => (
     <h1>Sound machine</h1>
     <DrumMachineInteractiveArea drumPads={drumPads} />
     <Instructions />
+    <Footer />
   </div>
 );
 
