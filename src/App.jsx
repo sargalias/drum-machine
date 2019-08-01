@@ -14,6 +14,7 @@ import convLoop120F_5 from 'audio/AM_ConvLoop120F-05-trimmed.wav';
 import convLoop120G_4 from 'audio/AM_ConvLoop120G-04-trimmed.wav';
 import guitVerber120A_1 from 'audio/AM_GuitVerber120A-01-trimmed.wav';
 import guitVerber120A_2 from 'audio/AM_GuitVerber120A-02-trimmed.wav';
+import styles from './App.scss';
 
 const drumPads = [
   {
@@ -59,11 +60,11 @@ const drumPads = [
 ];
 
 const App = () => (
-  <div>
-    <h1>Sound machine</h1>
+  <div className={styles.App}>
+    <h1 className={styles.App_heading}>Sound machine</h1>
     <DrumMachineInteractiveArea drumPads={drumPads} />
     <Instructions />
-    <Footer />
+    <Footer parentClass={styles.App_Footer} />
   </div>
 );
 

@@ -1,0 +1,14 @@
+.App {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding-top: 2.4rem;
+
+  &_heading {
+    margin-top: 0;
+  }
+
+  &_Footer {
+    margin-top: auto;
+  }
+}

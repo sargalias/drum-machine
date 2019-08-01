@@ -2,8 +2,12 @@
 
 exports[`snapshot 1`] = `
 <div>
-  <div>
-    <h1>
+  <div
+    class="App"
+  >
+    <h1
+      class="App_heading"
+    >
       Sound machine
     </h1>
     <div>
@@ -116,7 +120,7 @@ exports[`snapshot 1`] = `
       </div>
     </section>
     <footer
-      class="Footer "
+      class="Footer App_Footer"
     >
       <div
         class="Footer_content"
