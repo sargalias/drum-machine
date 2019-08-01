@@ -10,7 +10,7 @@ import styles from './App.scss';
 
 const App = () => (
   <div className={styles.App}>
-    <h1 className={styles.App_heading}>Sound machine</h1>
+    <h1 className={styles.App_heading}>Drum machine</h1>
     <DrumMachineInteractiveArea drumPads={drumPads} />
     <Instructions />
     <Footer parentClass={styles.App_Footer} />
