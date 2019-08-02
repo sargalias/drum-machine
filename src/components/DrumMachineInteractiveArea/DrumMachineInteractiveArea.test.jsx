@@ -10,11 +10,13 @@ describe('DrumMachineInteractiveArea', () => {
 
   beforeEach(() => {
     cleanup();
-    // eslint-disable-next-line
+    /* eslint-disable func-names */
+    const resolvedPromise = Promise.resolve();
     AudioMock = jest.fn(function() {
-      this.play = jest.fn();
-      this.pause = jest.fn();
+      this.play = jest.fn(() => resolvedPromise);
+      this.pause = jest.fn(() => resolvedPromise);
     });
+    /* eslint-enable */
     jest.spyOn(window, 'Audio').mockImplementation(AudioMock);
   });
 
