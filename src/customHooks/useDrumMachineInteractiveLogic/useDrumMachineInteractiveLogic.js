@@ -20,10 +20,13 @@ const useAppLogic = drumPads => {
     updateTimeoutId(letter, timeoutId);
   };
 
-  const restartAudio = (audio, timeoutId) => {
+  const restartAudio = (audio, timeoutId, i = 0) => {
+    if (i > 5) {
+      return;
+    }
     clearInterval(timeoutId);
     audio.currentTime = 0; // eslint-disable-line
-    audio.play();
+    audio.play().catch(() => restartAudio(audio, timeoutId, i + 1));
   };
 
   const setTimeoutStopAudioPlaying = letter =>
