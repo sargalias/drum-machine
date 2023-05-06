@@ -80,7 +80,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
     "jest-extended": "^0.11.2",
-    "lint-staged": "^8.1.6",
+    "lint-staged": "^13.2.2",
     "live-server": "^1.2.1",
     "live-server-https": "0.0.2",
     "mini-css-extract-plugin": "^0.6.0",
